@@ -1,65 +1,67 @@
-html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>送给你的生日歌</title>
-    <style>
-        body {
-            font-family: 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
-            width: 90%;
-        }
-        h1 {
-            margin-bottom: 30px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-        audio {
-            width: 100%;
-            margin: 20px 0;
-            border-radius: 50px;
-        }
-        .message {
-            margin-top: 30px;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>送给你的生日歌</title>
+  <style>
+    :root {
+      --bg1:#667eea; --bg2:#764ba2;
+      --glass: rgba(255,255,255,0.12);
+      --shadow: rgba(0,0,0,0.3);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+      background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 100%);
+      margin: 0; padding: 20px; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center; color: #fff;
+      text-align: center;
+    }
+    .container {
+      width: min(92vw, 560px);
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 38px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px var(--shadow);
+    }
+    h1 {
+      margin: 0 0 14px; font-size: clamp(24px, 2.6vw + 18px, 34px);
+      text-shadow: 0 2px 10px var(--shadow);
+    }
+    p.sub { margin: 0 0 18px; opacity: .9 }
+    audio {
+      width: 100%; margin: 18px 0 8px; border-radius: 8px; outline: none;
+    }
+    .message { margin-top: 18px; line-height: 1.7; font-size: 16px; }
+    .download {
+      display:inline-block; margin-top:8px; font-size:14px; opacity:.9; color:#fff;
+    }
+    .download:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🎂 生日快乐！ 🎂</h1>
-        <p>这份特别的礼物，送给特别的你</p>
-        
-        <!-- 音频播放器 -->
-        <audio controls controlsList="nodownload">
-            <source src="YOUR_AUDIO_URL_HERE" type="audio/wav">
-            <source src="YOUR_AUDIO_URL_HERE" type="audio/mpeg">
-            你的浏览器不支持音频播放，请直接<a href="YOUR_AUDIO_URL_HERE">下载歌曲</a>
-        </audio>
-        
-        <div class="message">
-            <p>点击上方的播放按钮，聆听我的心意 🎵</p>
-            <p>希望你喜欢这份特别的生日礼物！</p>
-        </div>
+  <div class="container">
+    <h1>🎂 生日快乐！ 🎂</h1>
+    <p class="sub">这份特别的礼物，送给特别的你</p>
+
+    <!-- 音频播放器（使用可直链的 RAW 地址） -->
+    <audio controls preload="none">
+      <source src="https://raw.githubusercontent.com/hamber2005/song/main/daoxiang.mp3" type="audio/mpeg">
+      你的浏览器不支持音频播放。
+    </audio>
+
+    <!-- 备用下载链接（某些老旧浏览器或跨域策略下可用作兜底） -->
+    <div>
+      <a class="download" href="https://raw.githubusercontent.com/hamber2005/song/main/daoxiang.mp3" download>下载歌曲（daoxiang.mp3）</a>
     </div>
+
+    <div class="message">
+      <p>点击上方的播放按钮，聆听我的心意 🎵</p>
+      <p>希望你喜欢这份特别的生日礼物！</p>
+    </div>
+  </div>
 </body>
 </html>
