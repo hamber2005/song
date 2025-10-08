@@ -1,0 +1,65 @@
+html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>送给你的生日歌</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        audio {
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 50px;
+        }
+        .message {
+            margin-top: 30px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎂 生日快乐！ 🎂</h1>
+        <p>这份特别的礼物，送给特别的你</p>
+        
+        <!-- 音频播放器 -->
+        <audio controls controlsList="nodownload">
+            <source src="YOUR_AUDIO_URL_HERE" type="audio/wav">
+            <source src="YOUR_AUDIO_URL_HERE" type="audio/mpeg">
+            你的浏览器不支持音频播放，请直接<a href="YOUR_AUDIO_URL_HERE">下载歌曲</a>
+        </audio>
+        
+        <div class="message">
+            <p>点击上方的播放按钮，聆听我的心意 🎵</p>
+            <p>希望你喜欢这份特别的生日礼物！</p>
+        </div>
+    </div>
+</body>
+</html>
