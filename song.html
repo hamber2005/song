@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>送给你的生日歌</title>
+  <title>生日快乐</title>
   <style>
     :root {
       --bg1:#667eea; --bg2:#764ba2;
@@ -11,12 +11,19 @@
       --shadow: rgba(0,0,0,0.3);
     }
     * { box-sizing: border-box; }
-    body {
+     body {
       font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-      background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 100%);
       margin: 0; padding: 20px; min-height: 100vh;
-      display: flex; align-items: center; justify-content: center; color: #fff;
-      text-align: center;
+      display: flex; align-items: center; justify-content: center; color: #fff; text-align: center;
+
+      /* 关键：用图片 + 渐变遮罩作为背景；后面的 url() 换成你的图片地址 */
+      background-image:
+        linear-gradient(135deg, var(--overlay), var(--overlay)),
+        url("https://raw.githubusercontent.com/hamber2005/song/main/picture111.jpg");
+      background-size: cover;         /* 铺满屏幕 */
+      background-position: center;    /* 居中裁切 */
+      background-repeat: no-repeat;
+      background-attachment: fixed;   /* 视差小效果，移动端会被忽略 */
     }
     .container {
       width: min(92vw, 560px);
@@ -44,8 +51,8 @@
 </head>
 <body>
   <div class="container">
-    <h1>🎂 生日快乐！ 🎂</h1>
-    <p class="sub">这份特别的礼物，送给特别的你</p>
+    <h1>🎂 生日快乐 🎂</h1>
+    <p class="sub">《稻香》是我非常非常喜欢的歌，送给你！</p>
 
     <!-- 音频播放器（使用可直链的 RAW 地址） -->
     <audio controls preload="none">
@@ -59,8 +66,7 @@
     </div>
 
     <div class="message">
-      <p>点击上方的播放按钮，聆听我的心意 🎵</p>
-      <p>希望你喜欢这份特别的生日礼物！</p>
+      <p>希望你喜欢！🎵</p>
     </div>
   </div>
 </body>
